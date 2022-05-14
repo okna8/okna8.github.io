@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../style/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../style/icon-font.min.css">
+    <link rel="stylesheet" href="../../../style/main.css">
+    <link rel="shortcut icon" href="images/logo.png">  
+    <link rel="stylesheet" href="../../../font-awesome/css/font-awesome.css">
+    <title>Okna8</title>
+    <script src="../../../script/jquery-2.1.1.js"></script>
+</head>
+<body style="background-color: black;">
+    <style>
+        @font-face {
+            font-family: biosfont;
+            src: url(../../BIOS/biosfont.ttf);
+        }
+    </style>
+    <div class="metrosplash" style="background-color: blue; z-index:2;"></div>
+    <div class="metroAppHeader">
+        <img class="metroIcon" src="metro_header/icon.png" alt="">
+        <h6>Mr. Отвал</h6>
+        <a href="../../start/startMenu.html"><img class="METRO_close" src="METRO_header/close.png" alt=""></a>
+    </div>
+    <div style="margin-top:60px;margin-left:30px; font-family: 'biosfont'; color: green;">OJIDANIE PODTVERJDENIYA...</div>
+    <div style="margin-top:10px;margin-left:30px; font-family: 'biosfont'; color: green;"></div>
+    <div style="margin-top:10px;margin-left:30px; font-family: 'biosfont'; color: green;" id="log1"></div>
+    <div style="margin-top:10px;margin-left:30px; font-family: 'biosfont'; color: green;" id="log2"></div>
+    <div style="margin-top:10px;margin-left:30px; font-family: 'biosfont'; color: green;" id="log3"></div>
+    <div style="margin-top:10px;margin-left:30px; font-family: 'biosfont'; color: green;" id="log4"></div>
+    <div style="margin-top:10px;margin-left:30px; font-family: 'biosfont'; color: green;" id="log5"></div>
+    <div style="margin-top:10px;margin-left:30px; font-family: 'biosfont'; color: green;" id="log6"></div>
+    <div style="margin-top:10px;margin-left:30px; font-family: 'biosfont'; color: green;" id="log7"></div>
+    <div class="openappani2" style="z-index: 99997;"></div>
+    <div class="metrowindow_bg"></div>
+    <div class="metrowindow_securityalert">
+        <div>
+            <h1 style="font-size:28px;color:white;font-family:'segoeuil'; padding-top:20px">Оповещение безопасности</h1>
+            <p style="font: size 16px;color:white;font-family:'segoeuil'; padding-top:8px; margin-bottom: 0px;  ">Это приложение хочет получить права на изменение системных настроек.</p>
+            <p style="font: size 16px;color:white;font-family:'segoeuil'; margin-bottom: 13px;">Продолжить запуск приложения?</p>
+            <div style="position: absolute; bottom: -120px;">
+                <button class="metrobutton2" id="securityalert_nextbtn"  style="cursor: default; display:inline; margin-left: 439px;">Далее</button>
+                <button class="metrobutton2" id="securityalert_cancelbtn" style="cursor: default; display:inline; padding-left: 17px; padding-right: 17px;">Выход</button>
+            </div>
+            <style>
+                .metrowindow_securityalert {
+    height: 273px;
+    width: 100vw;
+    position: absolute;
+    top: 50%;
+    margin-top: -136px;
+    background-color: rgb(31, 0, 104);
+    z-index: 4;
+}
+
+.metrowindow_bg {
+    opacity: 0.7;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 3;
+}
+
+.metrowindow_securityalert div {
+    position: absolute;
+    left: 50%;
+    margin-left: -315px;
+    width: 630px;
+}
+            </style>
+            <script>
+                window.onload = function(){
+                    $('.')
+                }
+                $('#securityalert_cancelbtn').click(function(){
+                    $('.openappani2').addClass('openappani');
+                    $('.openappani2').css('background-color','rgb(24, 0, 82)');
+                    setTimeout(function(){
+                        window.location.href = '../../start/startmenu.html'
+                    },600);
+                });  
+                $('#securityalert_nextbtn').click(function(){
+                    $('.metrowindow_securityalert').addClass('hidden');
+                    $('.metrowindow_bg').addClass('hidden');
+                    document.getElementById('log1').innerHTML = 'IDET VZLOM JOPI...'
+                    setTimeout(function(){
+                        $('.metroAppHeader').addClass('hidden');
+                        document.getElementById('log2').innerHTML = 'HA-HA YA NAEBNUL VERHNUU PANEL HA-HA'
+                        setTimeout(function(){
+                            document.getElementById('log3').innerHTML = 'TEPER NA NACHALNOM EKRANE NET STILEY AAHHAHAHAHA'
+                            localStorage.setItem('startDisableStyles',1);
+                            setTimeout(function(){
+                                document.getElementById('log4').innerHTML = 'SHAS BUDET BSOD HAHA'
+                                localStorage.setItem('otvalmode',1);
+                                window.location.href = '../../bsod/bsod.html'
+                            },400);
+                        },400);
+                    },400);
+                });     
+            </script>
+        </div>
+        
+    </div>
+</body>

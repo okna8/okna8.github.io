@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../style/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../style/icon-font.min.css">
+    <link rel="stylesheet" href="../../../style/main.css">
+    <link rel="stylesheet" href="../../../font-awesome/css/font-awesome.css">
+    <link rel="shortcut icon" href="images/logo.png">  
+    <link rel="stylesheet" href="recurs.css">
+    
+    <title>Okna8</title>
+</head>
+<body style="background-color: rgb(29,29,29);">
+    <div class="metrosplash" id="metrosplash" style="background-color: rgb(0, 205, 254);"><img style="margin-top: -57px; margin-left: -57px;" src="splash.png" alt=""></div>
+    <div class="metroAppHeader">
+        <img class="metroIcon" src="metro_header/icon.png" alt="">
+        <h6>Okna8</h6>
+        <a href="../../start/startMenu.html"><img class="METRO_close" src="METRO_header/close.png" alt=""></a>
+    </div>
+    <embed src="../../../index.html" style="margin-top: 29px; width: 100vw; height: calc(100vh - 35px)" frameborder="0"></embed>
+    <script src="../../../script/jquery-2.1.1.js"></script>
+    <script>
+        if(localStorage.getItem('igor2677-okna_installstate') != 1) {
+            window.location.href = '../../start/startmenu.html'
+        }
+        window.onload = function(){
+        $('.metrosplash').addClass('metrosplashhideani');
+        setTimeout(function(){
+            $('.metrosplash').addClass('hidden')
+        },200)
+        }
+    </script>
+</body>
