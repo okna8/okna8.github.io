@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/bootstrap.min.css">
+    <link rel="stylesheet" href="style/icon-font.min.css">
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="shortcut icon" href="images/logo.png">  
+    
+    <title>Okna8</title>
+</head>
+<body style="overflow-x: hidden;  background-color: rgb(24, 0, 82);">
+    <div class="all" style="margin-top:30px; margin-left:60px; padding-right: 30px;">
+        <table>
+            <tr>
+                <td>
+                    <img src="img/logo2.png" alt="">
+                </td>
+                <td>
+                    <h1 style="font-family: 'segoeuil'; font-size: 80px; color: white;">Okna8</h1>
+                </td>
+            </tr>
+        </table>
+        <p style="font-family: 'segoeuil'; font-size: 20px; color: white; margin-top: 20px; margin-bottom: 0px;">Добро пожаловать в Okna8!</p>
+        <p style="font-family: 'segoeuil'; font-size: 20px; color: white; margin-top: 0px; margin-bottom: 0px;">Дизайн Okna8 основан на дизайне ОС Microsoft Windows 8 и пытается его копировать.</p>
+        <p style="font-family: 'segoeuil'; font-size: 20px; color: white; margin-top: 0px; margin-bottom: 0px;">Скопировать его идеально, разумеется, невозможно. У Windows 8 много сложных анимаций и тому подобных, одним словом, украшательств. Я - разработчик, делаю всё возможное, чтобы дизайн был максимально похож на оригинал.</p>
+        
+        
+        <a style="margin-top: 30px;" class="startbtn"><div style="margin-top: 30px; background-color:rgb(24, 24, 24); height: 40px; width: 120px; text-align: center; font-family: 'segoeuil'; font-size: 24px; color: white;">Запуск!</div></a>
+        
+        <h5 style="position: absolute;bottom: 0px;right: 0px;  font-family: 'segoeui'; font-size: 24px; color: white;">Версия 20220513-2150</h5>
+        <style>
+            .startani{
+                animation-name: startaniani;
+                animation-fill-mode: forwards;
+                animation-duration: 0.5s;
+                animation-timing-function: ease;
+            }
+
+            @keyframes startaniani {
+                100% {transform: perspective(300px) rotateY(-60deg) scale(0.2,0.2);}
+            }
+        </style>
+        
+    </div>
+    <script src="script/jquery-2.1.1.js"></script>
+    <script>
+        
+        if(localStorage.getItem('skipIndexHtml') == 'true') {
+            if (localStorage.getItem('setupState') != null){
+                window.location.href = 'pages/bootscreen/boot.html'
+            }
+        }
+        $(function(){
+            $('.startbtn').click(function(){
+                $('.all').addClass('startani');
+                setTimeout(function(){
+                window.location.href = 'pages/bootscreen/boot.html'
+                },100);
+            });
+        });
+    </script>
+</body>
