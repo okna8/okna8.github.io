@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+    <title>Okna8</title>
+    <link rel="stylesheet" href="../../../style/main.css">
+</head>
+<body style="background-color: black;">
+    <section class="bootsection nocursor hidden" style="width: 100vw; height: 100wh;">
+        <div class="bootani hidden">
+            <div class="bootani2">
+                <img src="../../../img/logo2.png" alt="" />
+                <div class="space"></div>
+                <img class="spinner" src="../../../img/loading-windows.gif" alt="">
+            </div>
+        </div>
+    </section>
+    <div class="setupexe">
+        <style>
+            .setupexe {
+                width: 1024px;
+                height: 768px;
+                position: fixed;
+                left: 50%;
+                top: 50%;
+                margin-left: -512px;
+                margin-top: -384px;
+                background-color: rgb(24, 0, 82);
+                display: none;
+            }
+        </style>
+    </div>
+    <script src="../../../script/jquery-2.1.1.js"></script>
+    <script>
+        window.onload = function(){
+            $('.bootsection').removeClass('hidden');
+            $('.bootani').removeClass('hidden')
+        }
+        setTimeout(function() {
+            $('.spinner').css('display','block');
+        }, 1000);
+        setTimeout(function() {
+            $('.bootsection').addClass('hidden');
+        }, 15500);
+    </script>
+    <style>
+        .bootani2 {
+            top: 50%;
+            position: absolute;
+            margin-top: -173px;
+            left: 50%;
+            margin-left: -57px;
+            animation-name: opacityani;
+            animation-delay: 15s;
+            animation-duration: 0.2s;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards; 
+        
+        }
+        .space {
+            height: 200px;
+        }
+        
+        .spinner {
+            position: absolute;
+            height: 32px;
+            width: 32px;
+            left: 50%;
+            margin-left: -16px;
+            display: none;
+        }
+        
+        @keyframes opacityani {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        
+        </style>
+</body>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style/bootstrap.min.css">
+    <link rel="stylesheet" href="../../style/icon-font.min.css">
+    <link rel="stylesheet" href="../../style/main.css">
+    <title>Okna8</title>
+</head>
+<body style="background-color: rgb(32,103,178);">
+    <style>
+        .header {
+            font-size: 46px;
+            font-family: 'segoeuil';
+            color: white;
+            position: fixed;
+            top: 28px;
+            left: 144px ;
+        }
+        
+        .backbtn {
+            width: 32px;
+            height: 32px;
+            background-image: url(back.png);
+            position: fixed;
+            left: 80px;
+            top: 48px;
+        }
+
+        .backbtn:hover {
+            background-image: url(back_hover.png);
+        }
+
+        .backbtn:active {
+            background-image: url(back_active.png);
+        }
+
+        .tile img {
+            padding: 8px;
+        }
+
+        .tile h5 {
+            position: absolute;
+            left: 104px;
+            top:7px;
+            color: white;
+            font-size: 22px;
+            font-family: 'segoeuil';
+            line-height: 24px;
+        }
+
+        .tile h6 {
+            position: absolute;
+            left: 104px;
+            top:35px;
+            color: white;
+            font-size: 13px;
+            font-family: 'segoeuil';
+        }
+
+        .tile {
+            width: 320px;
+            height: 104px;
+        }
+
+        .tile:hover {
+            background-color: rgb(61, 123, 188);
+        }
+
+        .tilecontainer {
+            position: fixed;
+            left: 144px;
+        }
+
+        @keyframes opacityani {
+            100% {opacity: 1;}
+        }
+
+        @keyframes opacityani_rev {
+            100% {opacity: 0;}
+        }
+    </style>
+    <div class="section_main">
+        <div class="header">Выбор действия</div>
+        <div style="top: 120px;" class="tilecontainer tilecontainer_mainpage">
+            <div class="tile" onclick="boottowindows()">
+                <img src="actionTiles/backtowindows.png" alt="">
+                <h5>Продолжить</h5>
+                <h6>Выход и использование Windows 8.1</h6>
+            </div>
+        </div>
+        <div style="top: 236px;" class="tilecontainer tilecontainer_mainpage">
+            <div class="tile" onclick="boottowindows()">
+                <img src="actionTiles/usedevice.png" alt="">
+                <h5>Использовать устройство</h5>
+                <h6 style="top:56px;">USB-устройство, сетевое подключение или DVD-диск восстановления Windows</h6>
+            </div>
+        </div>
+        <div style="top: 348px;" class="tilecontainer tilecontainer_mainpage">
+            <div class="tile" onclick="sectiondiagnostic_open_frommain()">
+                <img src="actionTiles/diagnostic.png" alt="">
+                <h5>Диагностика</h5>
+                <h6>Восстановление компьютера, возврат компьютера в исходное состояние или использование дополнительных средств</h6>
+            </div>
+        </div>
+        <div style="top: 120px; left:472px;" class="tilecontainer tilecontainer_mainpage">
+            <div class="tile" onclick="turnoffpcfunc()">
+                <img src="actionTiles/turnoffpc.png" alt="">
+                <h5>Выключить компьютер</h5>
+            </div>
+        </div>
+    </div>
+    <div class="section_diagnostic hidden">
+        <div id="backbtn" onclick="sectionmain_open_fromdiagnostic()" class="backbtn"></div>
+        <div class="header">Диагностика</div>
+        <div style="top: 120px;" class="tilecontainer tilecontainer_mainpage">
+            <div class="tile" onclick="boottowindows()">
+                <img src="actionTiles/backtowindows.png" alt="">
+                <h5>Восстановить</h5>
+                <h6>Если ваш компьютер работает неправильно, вы можете его восстановить без потери файлов</h6>
+            </div>
+        </div>
+        <div style="top: 236px;" class="tilecontainer tilecontainer_mainpage">
+            <div class="tile" onclick="boottowindows()">
+                <img src="actionTiles/usedevice.png" alt="">
+                <h5>Вернуть в исходное состояние</h5>
+                <h6 style="top:56px;">Ваши файлы будут удалены</h6>
+            </div>
+        </div>
+        <div style="top: 348px;" class="tilecontainer tilecontainer_mainpage">
+            <div class="tile" onclick="sectionadvanced_open_fromdiagnostic()">
+                <img src="actionTiles/diagnostic.png" alt="">
+                <h5>Дополнительные параметры</h5>
+            </div>
+        </div>
+    </div>
+    <div class="section_advanced hidden">
+        <div id="backbtn" onclick="sectiondiagnostic_open_fromadvanced()" class="backbtn"></div>
+        <div class="header">Дополнительные параметры</div>
+        <div style="top: 120px;" class="tilecontainer tilecontainer_mainpage">
+            <div class="tile" onclick="boottowindows()">
+                <img src="actionTiles/backtowindows.png" alt="">
+                <h5>Восстановление системы</h5>
+                <h6 style="top:56px;">Восстановление Windows с помощю точки восстановления</h6>
+            </div>
+        </div>
+        <div style="top: 236px;" class="tilecontainer tilecontainer_mainpage">
+            <div class="tile" onclick="boottowindows()">
+                <img src="actionTiles/usedevice.png" alt="">
+                <h5>Восстановление образа системы</h5>
+                <h6 style="top:56px;">Восстановление Windows с помощю файла образа системы</h6>
+            </div>
+        </div>
+        <div style="top: 348px;" class="tilecontainer tilecontainer_mainpage">
+            <div class="tile" onclick="sectiondiagnostic_open_frommain()">
+                <img src="actionTiles/diagnostic.png" alt="">
+                <h5>Восстановление при загрузке</h5>
+                <h6 style="top:56px;">Устранение неполадок, мешающих загрузке Windows </h6>
+            </div>
+        </div>
+        <div style="top: 120px; left:472px;" class="tilecontainer tilecontainer_mainpage">
+            <div class="tile" onclick="turnoffpcfunc()">
+                <img src="actionTiles/usecmd.png" alt="">
+                <h5>Командная строка</h5>
+                <h6>Командную строку можно применять для расширенного устранения неполадок</h6>
+            </div>
+        </div>
+        <div style="top: 236px; left:472px;" class="tilecontainer tilecontainer_mainpage">
+            <div class="tile" onclick="turnoffpcfunc()">
+                <img src="actionTiles/uefi.png" alt="">
+                <h5>Параметры встроенного ПО UEFI</h5>
+                <h6 style="top:56px;">Изменение параметров встроенного ПО UEFI компьютера</h6>
+            </div>
+        </div>
+        <div style="top: 348px; left:472px;" class="tilecontainer tilecontainer_mainpage">
+            <div class="tile" onclick="turnoffpcfunc()">
+                <img src="actionTiles/editbootparameters.png" alt="">
+                <h5>Параметры загрузки</h5>
+                <h6>Настройка параметров загрузки Windows</h6>
+            </div>
+        </div>
+    </div>
+    <div class="tilescontainer tilescontainer_mainpage">
+    <div class="blackscreen" style="width: 100vw; height:100vh; position:fixed; top:0; left:0; background-color:black; display:none; opacity:0;"></div>
+    <script src="../../script/jquery-2.1.1.js"></script>
+    <script>
+        function boottowindows () {
+            $('.blackscreen').css('display','block');
+            $('.blackscreen').css('animation','opacityani 0.2s ease forwards');
+            setTimeout(function(){
+                window.location.href = '../BOOTSCREEN/BOOT.html'
+            },1000);
+        }
+
+        function turnoffpcfunc () {
+            $('.blackscreen').css('display','block');
+            $('.blackscreen').css('animation','opacityani 0.2s ease forwards');
+            setTimeout(function(){
+                window.location.href = '../../index.html'
+            },1000);
+        }
+
+        function sectiondiagnostic_open_frommain () {
+            $('.section_main').css('animation','opacityani_rev 0.2s ease forwards');
+            $('.section_diagnostic').removeClass('hidden');
+            $('.section_diagnostic').css('opacity','0');
+            setTimeout(function(){
+                $('.section_diagnostic').css('animation','opacityani 0.2s ease forwards');
+                $('.section_main').addClass('hidden');
+            },200);
+        }
+
+        function sectionmain_open_fromdiagnostic () {
+            $('.section_diagnostic').css('animation','opacityani_rev 0.2s ease forwards');
+            $('.section_main').removeClass('hidden');
+            $('.section_main').css('opacity','0');
+            setTimeout(function(){
+                $('.section_main').css('animation','opacityani 0.2s ease forwards');
+                $('.section_diagnostic').addClass('hidden');
+            },200);
+        }
+        function sectiondiagnostic_open_fromadvanced () {
+            $('.section_advanced').css('animation','opacityani_rev 0.2s ease forwards');
+            $('.section_diagnostic').removeClass('hidden');
+            $('.section_diagnostic').css('opacity','0');
+            setTimeout(function(){
+                $('.section_diagnostic').css('animation','opacityani 0.2s ease forwards');
+                $('.section_advanced').addClass('hidden');
+            },200);
+        }
+
+        function sectionadvanced_open_fromdiagnostic () {
+            $('.section_diagnostic').css('animation','opacityani_rev 0.2s ease forwards');
+            $('.section_advanced').removeClass('hidden');
+            $('.section_advanced').css('opacity','0');
+            setTimeout(function(){
+                $('.section_advanced').css('animation','opacityani 0.2s ease forwards');
+                $('.section_diagnostic').addClass('hidden');
+            },200);
+        }
+
+    </script>
+</body>
